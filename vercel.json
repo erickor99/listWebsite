@@ -13,11 +13,10 @@
     { "src": "/(.*)", "dest": "/index.html" }
   ],
   "functions": {
-    "api": {
-      "handler": "app.js"
-    }
+    "api": {}
   },
   "env": {
     "MY_ENV_VAR": "value"
   }
 }
+
