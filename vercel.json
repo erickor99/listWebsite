@@ -1,11 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "app.js", "use": "@vercel/node" }
+    {
+      "src": "__sapper__/build", // Specify the output directory of your Sapper build
+      "use": "vercel-sapper@1.0.0" // Use the vercel-sapper builder
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "app.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "__sapper__/build/:1" } // Route all traffic to the Sapper build output directory
   ]
 }
 
