@@ -28,7 +28,7 @@ const List = mongoose.model('List', listSchema);
 async function connectToDatabase() {
   try {
       await mongoose.connect("mongodb+srv://erick99:homosapiens668@cluster0.85khbjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
-   // await mongoose.connect("mongodb://localhost:27017/todolistDB");
+  // await mongoose.connect("mongodb://localhost:27017/todolistDB");
       
     console.log("Connected to MongoDB successfully");
   } catch (error) {
@@ -196,8 +196,13 @@ app.get("/:customListName", async function(req, res) {
 app.get("/about", function (req, res) {
   res.render("about");
 });
+//
+////const port = 3000;
+//app.listen(process.env.PORT || 3000, function () {
+//  console.log(`Server started on port ${port}`);
+//});
 
-//const port = 3000;
-app.listen(process.env.PORT || 3000, function () {
+const port = process.env.PORT || 3000; // Corrected line
+app.listen(port, function () {
   console.log(`Server started on port ${port}`);
 });
